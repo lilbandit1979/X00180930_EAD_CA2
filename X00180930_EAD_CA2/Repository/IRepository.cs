@@ -1,4 +1,5 @@
-﻿using X00180930_EAD_CA2.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using X00180930_EAD_CA2.Models;
 
 namespace X00180930_EAD_CA2.Repository
 {
@@ -7,6 +8,7 @@ namespace X00180930_EAD_CA2.Repository
             IEnumerable<Product> GetAllProducts();
             Product GetProduct(int id);
             void CreateProduct(Product product);
-            void EditProduct(Product product );  
+            void EditProduct(Product product );
+       
     }
 }

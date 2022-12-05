@@ -43,5 +43,14 @@ namespace X00180930_EAD_CA2.Repository
             }
             else throw new Exception("Product not found");
         }
+        //public IEnumerable<Product> ProductCategoryRating(Category category, int rating)
+        //{
+        //    var found = _products.Where(x => x.ProductCategory == category && x.Rating == rating);
+        //    if(found!=null)
+        //    {
+        //        return found;
+        //    }
+        //    throw new ArgumentException("Bad Request");
+        //}
     }
 }

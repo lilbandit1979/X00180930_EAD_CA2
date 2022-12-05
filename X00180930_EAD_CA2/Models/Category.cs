@@ -2,8 +2,8 @@
 {
     public enum Category
     {
-        Football,
-        Hurling, 
-        Clothes
+        Football=0,
+        Hurling=1, 
+        Clothes=2
     }
 }

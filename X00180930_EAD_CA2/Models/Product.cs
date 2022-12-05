@@ -20,5 +20,7 @@ namespace X00180930_EAD_CA2.Models
         public int Rating { get; set; }
         public Category ProductCategory { get; set; }
         public Size ProductSize { get; set; }
+
+     
     }
 }

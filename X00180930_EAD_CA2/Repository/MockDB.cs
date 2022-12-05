@@ -5,7 +5,7 @@ namespace X00180930_EAD_CA2.Repository
     public class MockDB : IRepository
     {
         private static List<Product> _products = new List<Product>() {
-            new Product {ProductID=0,ProductName="Hoodie", ProductCategory=Category.Clothes,ProductPrice=24.99,Rating=4,ProductSize=Size.M},
+            new Product {ProductID=0,ProductName="Hoodie",ProductPrice=24.99,Rating=4, ProductCategory=Category.Clothes,ProductSize=Size.M},
             new Product {ProductID=1,ProductName="Ball", ProductCategory=Category.Football,ProductPrice=49.99,Rating=3,ProductSize=Size.S},
          };
 

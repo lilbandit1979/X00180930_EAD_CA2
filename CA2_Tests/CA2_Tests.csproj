@@ -15,4 +15,8 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\X00180930_EAD_CA2\X00180930_EAD_CA2.csproj" />
+  </ItemGroup>
+
 </Project>

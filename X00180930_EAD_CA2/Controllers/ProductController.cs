@@ -14,32 +14,41 @@ namespace X00180930_EAD_CA2.Controllers
         {
             _db = db;
         }
+        [HttpGet("{id}")]
+        public ActionResult<Product> GetProduct(int id)
+        {
+            return _db.GetProduct(id);
+        }
 
-        [HttpGet]
+        [HttpGet("Product/all")]
         public ActionResult<IEnumerable<Product>> GetAllProducts()
         {
             return _db.GetAllProducts().ToList(); // Get all products
         }
+
+        [HttpPost]
+        public ActionResult<Product> CreateProduct(Product product) //working
+        {
+            _db.CreateProduct(product);
+            return Ok();
+        }
+
         [HttpGet("Products/{category}/{rating}")]
         public ActionResult<IEnumerable<Product>>GetCategoryRating(Category category, int rating)
         {
             var result = _db.GetAllProducts();
             var match = result.Where(x => x.ProductCategory == category && x.Rating == rating).ToList();
-            return Ok(rating);
+            return Ok(match);
          
         }
         [HttpGet("Products/{min}/{max}")]
         public ActionResult<IEnumerable<Product>>GetProductPriceRange(double min, double max)
         {
             var result = _db.GetAllProducts();
-            var priceRange = result.Where(x=>x.ProductPrice>=min && x.ProductPrice<=max);
-            return Ok(priceRange);
+            var priceRange = result.Where(x=>x.ProductPrice>=min && x.ProductPrice<=max).Select(x => x.ProductName); ;
+            return Ok(priceRange); //not working in swagger
         }
     }
 }
 
-//(2) Add in an RestAPI controller called ProductsContoller that will provide the following operations on request:
-//1.Return a list of products for a specified category and a specified rating
-//2. Return a list of products for a specified price range (i.e. allow the user to specify a
-//min and max price)
-//Implement an appropriate URI addressing scheme for the service and its operations (i.e. define appropriate URL’s to route to your controller actions
+
